@@ -1,0 +1,11 @@
+
+{% block content %}
+<h1>Subjects</h1>
+<ul>
+    {% for item in object_list %}
+    <li>
+        <a href="{{ item.get_absolute_url }}">{{ item.nazev }}</a>s
+    </li>
+    {% endfor %}
+</ul>
+{% endblock  %}

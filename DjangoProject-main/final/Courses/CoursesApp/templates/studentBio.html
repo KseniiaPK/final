@@ -1,0 +1,52 @@
+{% block name %}{{ name }}{% endblock %}
+{% block surname %}{{ surname }}{% endblock %}
+Student
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Profile</title>
+    <style>
+        .student-profile {
+            display: flex;
+            align-items: center;
+        }
+        .student-photo {
+            width: 150px;
+            height: 150px;
+            margin-right: 20px;
+            border: 1px solid #ccc;
+        }
+        .student-details {
+            flex-grow: 1;
+        }
+        .student-name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .student-surname {
+            font-size: 18px;
+        }
+        .student-links {
+            list-style-type: none;
+        }
+        .student-links li {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="student-profile">
+        <img class="student-photo" src="student-photo.jpg" alt="Student Photo">
+        <div class="student-details">
+            <p class="student-name">{% block name %}{{ name }}{% endblock %}</p>
+            <p class="student-surname">{% block surname %}{{ surname }}{% endblock %}</p>
+            <ul class="student-links">
+                <li><a href="subjects.html">Subjects</a></li>
+                <li><a href="myCourses.html">My Courses</a></li>
+                <li><a href="teacher.html">Teacher</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
